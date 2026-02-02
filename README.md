@@ -136,28 +136,6 @@ terraform destroy
 6. ✅ IAM policies validated with resource-specific ARNs
 7. ✅ End-to-end flow tested and verified
 
-## Cost Breakdown
-| Service | Free Tier | Estimated Cost |
-|---------|-----------|----------------|
-| Lambda | 1M requests/month | $0.00 |
-| SNS | 1,000 notifications/month | $0.00 |
-| EC2 t3.micro | 750 hours/month | $0.00 - $0.25/day |
-| CloudWatch Logs | 5GB/month | $0.00 |
-| **Total** | | **~$0.50 - $2.00 for testing** |
-
-*All resources are free-tier eligible and can be destroyed immediately after testing.*
-
-## Recordings
-See [recordings/links.md](recordings/links.md) for video demonstrations of all three parts.
 
 ## Contact
 **Email:** pkalivarapu@gmail.com  
-**LinkedIn:** [Your LinkedIn]  
-**GitHub:** [Your GitHub username]
-
----
-
-*Developed for PacerPro Platform Engineer position | February 2026*
-EOF
-
-cat README.md | head -50

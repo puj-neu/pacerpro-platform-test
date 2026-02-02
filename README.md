@@ -1,4 +1,3 @@
-cat > README.md << 'EOF'
 # PacerPro Platform Engineer - Coding Test
 **Author:** Puja Kalivarapu | **Date:** February 2026
 

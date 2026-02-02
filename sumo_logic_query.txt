@@ -1,0 +1,40 @@
+_sourceCategory=_web_logs
+| json field=_raw "endpoint","response_time_ms" as endpoint, response_time
+| where endpoint = "/api/data"
+| where response_time > 3000
+| timeslice 10m
+| count by endpoint,_timeslice
+| where _count > 5
+
+
+ALERT CONFIG 
+
+Alert Name: High Response Time - /api/data endpoint
+Alert Definition: Triggers when /api/data endpoint response time exceeds 3s for more than 5 requests in a 10 min window
+
+Trigger Condition:
+- Query - as above 
+- Threshold: Count > 5
+- Time window: 10 min
+- Alert Type: Scheduled Search
+- Search Frequency: 5 mins 
+
+Alert Action: 
+
+- Type: Webhook 
+- Method: POST
+- Endpoint: SnS Topic Https URL 
+- Payload: JSON Alert with Alert Details and instance_id 
+
+Webhook Payload Structure 
+
+{ 
+    alert_name: "High Response Time - /api/data endpoint",
+    endpoint: "/api/data",
+    instance_id: "i - 761298373467",
+    "threshold_exceeded": 7,
+    "time_window": "10 min",
+    "severity" : "high",
+    "timestamp" : "xyz"
+
+}

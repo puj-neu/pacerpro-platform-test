@@ -1,0 +1,5 @@
+aws_region = "us-east-1"
+project_name = "pacer-pro-platform-test"
+alert_email = "pkalivarapu@gmail.com"
+ec2_ami_id = "ami-026992d753d5622bc"
+ec2_instance_type = "t3.micro"
